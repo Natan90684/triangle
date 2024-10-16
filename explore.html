@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Triangle</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+</head>
+<body style="background-color: black; color: white;">
+    <nav>
+        <div class="nav-container">
+            <img src="images/logo.png" alt="Triangle Logo" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="rules.html">Community Rules</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="explore-page">
+        <h1>Explore Top Users and New Posts</h1>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search..." id="search">
+            <button id="search-button">Search</button>
+        </div>
+
+        <h2>Top Users</h2>
+        <div class="top-users" id="top-users">
+            <!-- Top users will be populated here -->
+        </div>
+
+        <h2>New Posts</h2>
+        <div class="new-posts" id="new-posts">
+            <!-- New posts will be populated here -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="rules.html">Community Rules</a>
+            <a href="mailto:natanmario3413@gmail.com">Contact</a>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Fetch Top Users
+        db.collection("users").orderBy("postsCount", "desc").limit(5).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const user = doc.data();
+                    const userCard = document.createElement("div");
+                    userCard.classList.add("user-card");
+                    userCard.innerHTML = `<strong>${user.username}</strong><br><img src="${user.profilePicture}" alt="${user.username}" width="50">`;
+                    document.getElementById("top-users").appendChild(userCard);
+                });
+            });
+
+        // Fetch New Posts
+        db.collection("posts").orderBy("timestamp", "desc").limit(5).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const post = doc.data();
+                    const postCard = document.createElement("div");
+                    postCard.classList.add("post-card");
+                    postCard.innerHTML = `<strong>${post.username}</strong>: ${post.content}`;
+                    document.getElementById("new-posts").appendChild(postCard);
+                });
+            });
+    </script>
+</body>
+</html>

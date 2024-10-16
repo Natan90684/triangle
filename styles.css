@@ -1,0 +1,68 @@
+body {
+    margin: 0; /* Remove default margin */
+}
+
+nav {
+    background-color: orange; /* Navigation bar background color */
+    padding: 10px; /* Padding for the nav */
+}
+
+.nav-container {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center vertically */
+    max-width: 1200px; /* Set max width for nav */
+    margin: auto; /* Center the nav */
+}
+
+.logo {
+    width: 50px; /* Adjust logo size as needed */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display items in a row */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between links */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Link color */
+    font-weight: bold; /* Bold links */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.welcome {
+    text-align: center; /* Center the text */
+    margin-top: 100px; /* Space from the top */
+}
+
+.welcome h1 {
+    font-size: 36px; /* Larger font size for the heading */
+}
+
+.welcome p {
+    font-size: 20px; /* Font size for the paragraph */
+}
+
+.welcome button {
+    background-color: orange; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Button font size */
+    margin: 10px; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.welcome button:hover {
+    background-color: darkorange; /* Darker color on hover */
+}

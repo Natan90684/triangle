@@ -119,3 +119,14 @@ if (loginForm) {
         });
     });
 }
+// Search functionality for Explore page
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
+
+if (searchBtn) {
+    searchBtn.addEventListener('click', function () {
+        const query = searchInput.value;
+        console.log('Searching for:', query);
+        // In future, this is where you'd search the database
+    });
+}

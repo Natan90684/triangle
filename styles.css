@@ -66,3 +66,60 @@ nav ul li a:hover {
 .welcome button:hover {
     background-color: darkorange; /* Darker color on hover */
 }
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: orange;
+}
+
+.nav-container ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-container ul li {
+    margin-right: 15px;
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.explore-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    background-color: orange;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+.top-users, .new-posts {
+    margin-top: 30px;
+    }

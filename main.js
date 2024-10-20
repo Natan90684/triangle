@@ -64,3 +64,58 @@ if (loginForm) {
             });
     });
 }
+// Initialize Netlify Identity
+if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+        console.log("Netlify Identity initialized:", user);
+    });
+
+    window.netlifyIdentity.on("login", user => {
+        console.log("Logged in as:", user);
+        window.location.href = "explore.html";
+    });
+
+    window.netlifyIdentity.on("logout", () => {
+        console.log("Logged out");
+    });
+}
+
+// Sign up event listener (on signup.html)
+const signupForm = document.getElementById("signupForm");
+if (signupForm) {
+    signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        netlifyIdentity.signup({
+            email: email,
+            password: password
+        }).then(user => {
+            console.log('User signed up:', user);
+            window.location.href = "login.html";
+        }).catch(error => {
+            console.error('Sign-up error:', error);
+        });
+    });
+}
+
+// Login event listener (on login.html)
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        netlifyIdentity.login({
+            email: email,
+            password: password
+        }).then(user => {
+            console.log('User logged in:', user);
+            window.location.href = "explore.html";
+        }).catch(error => {
+            console.error('Login error:', error);
+        });
+    });
+}

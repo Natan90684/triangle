@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Banned</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ban-message">
+        <h1>You have been banned from Triangle. :(</h1>
+        <p><strong>Ban Date:</strong> <span id="banDate">[Ban Date]</span></p>
+        <p><strong>Moderator Note:</strong> <span id="modNote">[Moderator Note]</span></p>
+        <button id="logoutBtn">Log Out</button>
+    </div>
+
+    <script>
+        // Example of dynamically inserting the ban date and moderator note
+        document.getElementById('banDate').innerText = "October 20, 2024";  // Replace with actual ban date
+        document.getElementById('modNote').innerText = "Violation of community guidelines.";  // Replace with actual note
+    </script>
+</body>
+</html>

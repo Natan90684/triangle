@@ -4,7 +4,6 @@ triangle/
     ├── profile-placeholder.png  # Placeholder profile picture
     ├── favicon.ico              # Favicon icon for browser tab
     └── banner.jpg               # Banner image (if used)
-
 root/
 ├── assets/
 │   ├── logo.png

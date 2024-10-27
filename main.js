@@ -130,3 +130,21 @@ if (searchBtn) {
         // In future, this is where you'd search the database
     });
 }
+triangle/
+├── index.html              # Homepage for logged-out users
+├── explore.html            # Explore page, where top users and posts will display
+├── login.html              # Login page
+├── signup.html             # Signup page for new users
+├── profile.html            # Profile page (placeholder if no users)
+├── banned.html             # Page shown to banned users with details
+├── privacy.html            # Privacy policy page
+├── rules.html              # Community rules page
+├── CNAME                   # File containing "triangle.dev" for GitHub custom domain
+├── css/                    # Folder for CSS files
+│   ├── styles.css          # Main CSS styles for the website
+│   └── dark-mode.css       # Optional CSS for dark mode (if needed)
+├── js/                     # Folder for JavaScript files
+│   ├── main.js             # General JavaScript for the site
+│   └── auth.js             # JavaScript for login/signup and authentication
+└── assets/                 # Folder for assets like images or logos
+    └── logo.png            # Logo image for navbar, favicon, etc.

@@ -1,3 +1,17 @@
+root/
+├── assets/
+│   ├── logo.png
+│   ├── profile-placeholder.png
+│   ├── favicon.ico
+│   ├── banner.jpg
+├── css/
+│   └── styles.css
+├── index.html         <!-- Logged-out Homepage -->
+├── explore.html       <!-- Explore Page -->
+├── profile.html       <!-- Profile Page -->
+├── signup.html        <!-- Sign Up Page -->
+├── login.html         <!-- Log In Page -->
+├── banned.html        <!-- Banned User Page -->
 triangle/
 └── assets/
     ├── logo.png                 # Logo image

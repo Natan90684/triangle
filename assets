@@ -4,3 +4,15 @@ triangle/
     ├── profile-placeholder.png  # Placeholder profile picture
     ├── favicon.ico              # Favicon icon for browser tab
     └── banner.jpg               # Banner image (if used)
+
+root/
+├── assets/
+│   ├── logo.png
+│   ├── profile-placeholder.png
+│   ├── favicon.ico
+│   ├── banner.jpg
+├── css/
+│   └── styles.css
+├── index.html
+├── profile.html
+└── explore.html

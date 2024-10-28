@@ -165,3 +165,17 @@ body {
 │   └── auth.js             # JavaScript for login/signup and authentication
 └── assets/                 # Folder for assets like images or logos
     └── logo.png            # Logo image for navbar, favicon, etc.
+root/
+├── assets/
+│   ├── logo.png
+│   ├── profile-placeholder.png
+│   ├── favicon.ico
+│   ├── banner.jpg
+├── css/
+│   └── styles.css
+├── index.html         <!-- Logged-out Homepage -->
+├── explore.html       <!-- Explore Page -->
+├── profile.html       <!-- Profile Page -->
+├── signup.html        <!-- Sign Up Page -->
+├── login.html         <!-- Log In Page -->
+├── banned.html        <!-- Banned User Page -->

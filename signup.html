@@ -58,3 +58,50 @@
         console.error("Error fetching user data:", error);
     });
 </script>
+<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "your-api-key",
+        authDomain: "your-project-id.firebaseapp.com",
+        projectId: "your-project-id",
+        storageBucket: "your-project-id.appspot.com",
+        messagingSenderId: "your-sender-id",
+        appId: "your-app-id"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const username = document.getElementById("username").value;
+        const birthday = document.getElementById("birthday").value;
+        const country = "Placeholder Country"; // Adjust based on user input.
+
+        try {
+            const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+            const userId = userCredential.user.uid;
+
+            // Save user info in Firestore
+            await db.collection("users").doc(userId).set({
+                username,
+                email,
+                birthday,
+                country,
+                createdAt: new Date().toISOString()
+            });
+
+            alert("Account created successfully!");
+            window.location.href = "login.html";
+        } catch (error) {
+            console.error("Error signing up:", error);
+            alert(error.message);
+        }
+    });
+</script>

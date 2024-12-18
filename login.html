@@ -35,3 +35,21 @@
     </footer>
 </body>
             </html>
+<script>
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            alert("Logged in successfully!");
+            window.location.href = "explore.html";
+        } catch (error) {
+            console.error("Error logging in:", error);
+            alert(error.message);
+        }
+    });
+</script>

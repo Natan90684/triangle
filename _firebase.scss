@@ -1,0 +1,49 @@
+$primary-color: orange;
+$background-color: black;
+$text-color: white;
+$error-color: red;
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: $primary-color;
+    padding: 20px;
+    border-radius: 8px;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 4px;
+    }
+
+    button {
+        width: 100%;
+        background: $text-color;
+        color: $primary-color;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.error-message {
+    color: $error-color;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}

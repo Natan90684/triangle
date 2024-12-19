@@ -44,3 +44,71 @@
         console.error("Error fetching user data:", error);
     });
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Triangle</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: orange;
+            padding: 10px 20px;
+        }
+        .navbar .brand {
+            font-size: 1.5em;
+            color: black;
+            font-weight: bold;
+        }
+        .profile-header {
+            text-align: center;
+            margin: 20px;
+        }
+        .profile-header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .profile-header .username {
+            font-size: 1.5em;
+        }
+        .profile-info {
+            margin: 20px;
+            text-align: center;
+        }
+        .placeholder {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span class="brand">Triangle</span>
+        <div>
+            <a href="index.html" style="margin-right: 10px; color: black;">Home</a>
+            <a href="explore.html" style="color: black;">Explore</a>
+        </div>
+    </div>
+
+    <div class="profile-header">
+        <img src="assets/profile-placeholder.png" alt="Profile Picture">
+        <p class="username">@PlaceholderUser</p>
+    </div>
+
+    <div class="profile-info">
+        <p><strong>About:</strong> <span class="placeholder">This user has not added an about section yet.</span></p>
+        <p><strong>Country of Residence:</strong> <span class="placeholder">Unknown</span></p>
+    </div>
+</body>
+</html>
